@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "floors",
+  "info": {
+    "name": "Floor"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "number": {
+      "type": "integer"
+    },
+    "section": {
+      "model": "section",
+      "via": "floors"
+    },
+    "flats": {
+      "collection": "flat",
+      "via": "floor"
+    }
+  }
+}

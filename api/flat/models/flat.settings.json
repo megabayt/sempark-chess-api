@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "flats",
+  "info": {
+    "name": "Flat"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "roomNo": {
+      "type": "integer"
+    },
+    "roomType": {
+      "type": "string"
+    },
+    "contactInfo": {
+      "type": "text"
+    },
+    "floor": {
+      "via": "flats",
+      "model": "floor"
+    }
+  }
+}
