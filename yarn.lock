@@ -9044,7 +9044,7 @@ strapi-utils@3.0.0-beta.18.7:
     shelljs "^0.8.3"
     yup "^0.28.0"
 
-strapi@3.0.0-beta.18.7:
+strapi@^3.0.0-beta.18.7:
   version "3.0.0-beta.18.7"
   resolved "https://registry.yarnpkg.com/strapi/-/strapi-3.0.0-beta.18.7.tgz#f7bc73619820b1e32d83a5ca3dfe6d4429c12417"
   integrity sha512-hHxDUXeUD4Zrwn0ef/uWge8KA+K1JAPeZpKGGvN9K7yYMe7ytCvQ56cwKNisrsJTLJJosC0cA6NLD5BDFEHlYg==

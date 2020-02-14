@@ -1,0 +1,20 @@
+{
+  "info": {
+    "name": "Housing"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "number": {
+      "type": "integer"
+    },
+    "sections": {
+      "collection": "section",
+      "via": "housing"
+    }
+  },
+  "connection": "default",
+  "collectionName": "housings"
+}

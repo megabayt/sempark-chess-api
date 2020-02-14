@@ -15,6 +15,10 @@
     "floors": {
       "via": "section",
       "collection": "floor"
+    },
+    "housing": {
+      "via": "sections",
+      "model": "housing"
     }
   }
 }

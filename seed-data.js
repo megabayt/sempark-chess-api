@@ -85,18 +85,21 @@ const getRoomType = (sectionIndex, flatIndex) => {
   }
 }
 
+const sleep = () => new Promise(resolve => setTimeout(resolve, 250));
+
 [...new Array(6)].forEach(async function (_, sectionIndex) {
   const isAngle = (sectionIndex + 1) === 2 || (sectionIndex + 1) === 5;
-  const sectionRef = await axios.post('http://localhost:1337/sections', {
+  const sectionRef = await axios.post('https://api.sempark.xyz/sections', {
     number: sectionIndex + 1,
   });
   [...new Array(isAngle ? 20 : 25)].forEach(async (_, floorIndex) => {
-    const floorRef = await axios.post('http://localhost:1337/floors', {
+    const floorRef = await axios.post('https://api.sempark.xyz/floors', {
       number: floorIndex + 1,
       section: sectionRef.data.id,
     });
     [...new Array(isAngle ? 7 : 4)].forEach(async (_, flatIndex) => {
-      const flatRef = await axios.post('http://localhost:1337/flats', {
+      await sleep();
+      const flatRef = await axios.post('https://api.sempark.xyz/flats', {
         floor: floorRef.data.id,
         roomNo: floorIndex === 0 ? '-' : roomNo++,
         roomType: floorIndex === 0 ? '-' : getRoomType(sectionIndex, flatIndex),
