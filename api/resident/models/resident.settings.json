@@ -1,4 +1,6 @@
 {
+  "connection": "default",
+  "collectionName": "residents",
   "info": {
     "name": "Resident"
   },
@@ -19,8 +21,9 @@
     "flat": {
       "model": "flat",
       "via": "residents"
+    },
+    "name": {
+      "type": "string"
     }
-  },
-  "connection": "default",
-  "collectionName": "residents"
+  }
 }
