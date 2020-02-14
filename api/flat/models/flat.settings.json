@@ -12,15 +12,20 @@
     "roomNo": {
       "type": "integer"
     },
+    "floor": {
+      "type": "integer"
+    },
+    "section": {
+      "type": "integer"
+    },
+    "housing": {
+      "type": "integer"
+    },
     "roomType": {
       "type": "string"
     },
     "contactInfo": {
       "type": "text"
-    },
-    "floor": {
-      "via": "flats",
-      "model": "floor"
     }
   }
 }
