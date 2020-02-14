@@ -26,6 +26,10 @@
     },
     "contactInfo": {
       "type": "text"
+    },
+    "residents": {
+      "via": "flat",
+      "collection": "resident"
     }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "info": {
+    "name": "Resident"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "vkId": {
+      "type": "string"
+    },
+    "telegramId": {
+      "type": "string"
+    },
+    "whatsappPhone": {
+      "type": "string"
+    },
+    "flat": {
+      "model": "flat",
+      "via": "residents"
+    }
+  },
+  "connection": "default",
+  "collectionName": "residents"
+}
