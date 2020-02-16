@@ -113,3 +113,8 @@ coverage
 exports
 .cache
 build
+
+############################
+# Strapi
+############################
+config/environments/production
