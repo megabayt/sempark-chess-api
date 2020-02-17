@@ -5,4 +5,12 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+  findFilled: async (obj, options, ctx) => {
+    const result = await strapi.controllers.flats.findAll(ctx);
+
+    strapi.log.info(result);
+
+    return ctx.body.flats;
+  }
+};

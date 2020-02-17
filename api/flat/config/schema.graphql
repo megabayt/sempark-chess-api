@@ -1,0 +1,20 @@
+module.exports = {
+  definition: `
+  `,
+  query: `
+    flatsFilled: [Flat]
+  `,
+  mutation: `
+  `,
+  resolver: {
+    Query: {
+      flatsFilled: {
+        description: 'Returns filled flats',
+        policies: [],
+        resolver: 'Flat.findFilled',
+      },
+    },
+    Mutation: {
+    }
+  }
+};
