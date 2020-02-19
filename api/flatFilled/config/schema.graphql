@@ -1,13 +1,13 @@
 module.exports = {
   definition: `
     type FlatFilled {
-      roomNo: Int
+      flatNo: Int
       floor: Int
       section: Int
       housing: Int
-      roomType: String
+      flatType: String
       contactInfo: String
-      hasResident: Boolean
+      hasUser: Boolean
       id: ID!
       created_at: DateTime!
       updated_at: DateTime!

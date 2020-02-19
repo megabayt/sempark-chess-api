@@ -9,15 +9,19 @@ module.exports = {
     let result;
 
     try {
-      result = await strapi.controllers.flat.find(ctx);
+      result = await strapi
+        .query('flat')
+        .model
+        .fetchAll();
+      result = result.serialize();
     } catch (err) {
       strapi.log.error(err);
       result = [];
     }
 
-    result = result.map(({ residents, ...flat }) => ({
+    result = result.map(({ users, ...flat }) => ({
       ...flat,
-      hasResident: residents.length > 0,
+      hasUser: users.length > 0,
     }));
 
     ctx.send(result)

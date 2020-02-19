@@ -1,8 +1,8 @@
 const axios = require('axios');
 
-let roomNo = 1;
+let flatNo = 1;
 
-const getRoomType = (sectionIndex, flatIndex) => {
+const getFlatType = (sectionIndex, flatIndex) => {
   switch (sectionIndex + 1) {
     case 1:
       switch (flatIndex + 1) {
@@ -95,12 +95,12 @@ const sleep = () => new Promise(resolve => setTimeout(resolve, 250));
       if (floorIndex === 0) {
           return;
       }
-      const flatRef = await axios.post('https://api.sempark.xyz/flats', {
+      const flatRef = await axios.post('http://localhost:1337/flats', {
         housing: 1,
         section: sectionIndex + 1,
         floor: floorIndex + 1,
-        roomNo: roomNo++,
-        roomType: getRoomType(sectionIndex, flatIndex),
+        flatNo: flatNo++,
+        flatType: getFlatType(sectionIndex, flatIndex),
         contactInfo: '',
       });
     });

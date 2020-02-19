@@ -2,14 +2,14 @@
   "connection": "default",
   "collectionName": "flats",
   "info": {
-    "name": "Flat"
+    "name": "Квартира"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "roomNo": {
+    "flatNo": {
       "type": "integer"
     },
     "floor": {
@@ -21,11 +21,12 @@
     "housing": {
       "type": "integer"
     },
-    "roomType": {
+    "flatType": {
       "type": "string"
     },
-    "residents": {
-      "collection": "resident",
+    "users": {
+      "plugin": "users-permissions",
+      "collection": "user",
       "via": "flat"
     }
   }
