@@ -6,11 +6,21 @@
  */
 
 module.exports = {
-  findFilled: async (obj, options, ctx) => {
-    const result = await strapi.controllers.flats.findAll(ctx);
+  findFilled: async ctx => {
+    let result;
 
-    strapi.log.info(result);
+    try {
+      result = await strapi.controllers.flat.find(ctx);
+    } catch (err) {
+      strapi.log.error(err);
+      result = [];
+    }
 
-    return ctx.body.flats;
+    result = result.map(({ residents, ...flat }) => ({
+      ...flat,
+      hasResident: residents.length > 0,
+    }));
+
+    ctx.send(result)
   }
 };
