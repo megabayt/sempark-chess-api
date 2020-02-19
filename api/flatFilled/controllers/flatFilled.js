@@ -12,6 +12,9 @@ module.exports = {
       result = await strapi
         .query('flat')
         .model
+        .query(function(qb) {
+          qb.orderBy('flatNo', 'ASC');
+        })
         .fetchAll();
       result = result.serialize();
     } catch (err) {
