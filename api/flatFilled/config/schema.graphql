@@ -14,7 +14,7 @@ module.exports = {
     }
   `,
   query: `
-    flatsFilled: [FlatFilled]
+    flatsFilled(sort: String, limit: Int, start: Int, where: JSON): [FlatFilled]
   `,
   mutation: `
   `,
