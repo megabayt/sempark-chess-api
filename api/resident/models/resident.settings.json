@@ -19,8 +19,8 @@
       "type": "string"
     },
     "flat": {
-      "model": "flat",
-      "via": "residents"
+      "via": "residents",
+      "model": "flat"
     },
     "name": {
       "type": "string"

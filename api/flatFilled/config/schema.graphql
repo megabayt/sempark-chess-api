@@ -1,0 +1,32 @@
+module.exports = {
+  definition: `
+    type FlatFilled {
+      roomNo: Int
+      floor: Int
+      section: Int
+      housing: Int
+      roomType: String
+      contactInfo: String
+      hasResident: Boolean
+      id: ID!
+      created_at: DateTime!
+      updated_at: DateTime!
+    }
+  `,
+  query: `
+    flatsFilled: [FlatFilled]
+  `,
+  mutation: `
+  `,
+  resolver: {
+    Query: {
+      flatsFilled: {
+        description: 'Returns filled flats',
+        policies: [],
+        resolver: 'FlatFilled.findFilled',
+      },
+    },
+    Mutation: {
+    }
+  }
+};
