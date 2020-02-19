@@ -23,7 +23,7 @@ module.exports = {
       flatsFilled: {
         description: 'Returns filled flats',
         policies: [],
-        resolver: 'Flat.findFilled',
+        resolver: 'FlatFilled.findFilled',
       },
     },
     Mutation: {
