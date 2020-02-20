@@ -85,24 +85,30 @@ const getFlatType = (sectionIndex, flatIndex) => {
   }
 }
 
-const sleep = () => new Promise(resolve => setTimeout(resolve, 250));
+(async () => {
+  const sections = [...new Array(6)];
 
-[...new Array(6)].forEach(async function (_, sectionIndex) {
-  const isAngle = sectionIndex + 1 === 2 || sectionIndex + 1 === 5;
-  [...new Array(isAngle ? 20 : 25)].forEach(async (_, floorIndex) => {
-    [...new Array(isAngle ? 7 : 4)].forEach(async (_, flatIndex) => {
-      await sleep();
-      if (floorIndex === 0) {
-          return;
+  for (let sectionIndex = 0; sectionIndex < sections.length; sectionIndex++) {
+    const isAngle = sectionIndex + 1 === 2 || sectionIndex + 1 === 5;
+    const floors = [...new Array(isAngle ? 20 : 25)];
+
+    for (let floorIndex = 0; floorIndex < floors.length; floorIndex++) {
+      const flats = [...new Array(isAngle ? 7 : 4)];
+
+      for (let flatIndex = 0; flatIndex < flats.length; flatIndex++) {
+
+        if (floorIndex === 0) {
+          continue;
+        }
+        await axios.post('https://api.sempark.xyz/flats', {
+          housing: 1,
+          section: sectionIndex + 1,
+          floor: floorIndex + 1,
+          flatNo: flatNo++,
+          flatType: getFlatType(sectionIndex, flatIndex),
+        });
+
       }
-      const flatRef = await axios.post('http://localhost:1337/flats', {
-        housing: 1,
-        section: sectionIndex + 1,
-        floor: floorIndex + 1,
-        flatNo: flatNo++,
-        flatType: getFlatType(sectionIndex, flatIndex),
-        contactInfo: '',
-      });
-    });
-  });
-});
+    }
+  }
+})();
