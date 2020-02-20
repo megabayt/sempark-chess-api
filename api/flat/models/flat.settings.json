@@ -25,9 +25,9 @@
       "type": "string"
     },
     "users": {
+      "via": "flat",
       "plugin": "users-permissions",
-      "collection": "user",
-      "via": "flat"
+      "collection": "user"
     }
   }
 }

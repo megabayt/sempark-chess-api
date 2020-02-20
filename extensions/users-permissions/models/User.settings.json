@@ -63,8 +63,11 @@
       "type": "string"
     },
     "flat": {
-      "via": "users",
-      "model": "flat"
+      "model": "flat",
+      "via": "users"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }
